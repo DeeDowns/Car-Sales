@@ -35,14 +35,9 @@ export const featuresReducer = (state = initialState, action) => {
             return {
                 ...state, 
                 additionalPrice: state.additionalPrice - action.payload.price,
-                car: { ...state.car,
-                    features: [state.car.features.map(feature => {
-                        if(feature.id === action.payload.id) {
-                            return {features: [!action.payload]}
-                        } else {
-                            return feature
-                        }
-                    })]
+                car: { 
+                    ...state.car,
+                    features: [...state.car.features.filter(feature => feature.id !== action.payload.id)]
                 } 
             }  
         default: 
