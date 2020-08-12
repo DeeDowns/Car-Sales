@@ -22,6 +22,7 @@ const App = (props) => {
   //     { id: 4, name: 'Rear spoiler', price: 250 }
   //   ]
   // };
+  
 
   return (
     <div className="boxes">
